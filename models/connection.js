@@ -9,6 +9,7 @@ var options = {
  useNewUrlParser: true,
  useUnifiedTopology : true
 }
+
 mongoose.connect(`mongodb+srv://${process.env.identifiant}:${process.env.mdp}@cluster0.ky86x.mongodb.net/EasyExpertise?retryWrites=true&w=majority`, options,        
  function(err) {
    console.log(err);

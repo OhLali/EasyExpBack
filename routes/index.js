@@ -209,22 +209,22 @@ router.post('/uploadNote', async function(req, res, next){
   res.json({response, folderSaved: folderSaved.note})
 })
 
-router.post('/downloadNote', async function(req, res, next){
+// router.post('/downloadNote', async function(req, res, next){
 
-  var response = false
-  var folder = await FolderModel.findOne({_id: req.body.idFolder})
-  if(folder !== null){
-    response = true
-    folder.note.push({
-      roomNote : req.body.categoryTitle,
-      title : req.body.noteTitle,
-      text : req.body.note,
-    })
-  var folderSaved = await folder.save()
-  }
+//   var response = false
+//   var folder = await FolderModel.findOne({_id: req.body.idFolder})
+//   if(folder !== null){
+//     response = true
+//     folder.note.push({
+//       roomNote : req.body.categoryTitle,
+//       title : req.body.noteTitle,
+//       text : req.body.note,
+//     })
+//   var folderSaved = await folder.save()
+//   }
 
-  res.json({response, folderSaved: folderSaved.note})
-})
+//   res.json({response, folderSaved: folderSaved.note})
+// })
 
 router.delete('/deleteNote', async function(req, res, next){
   
